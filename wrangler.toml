@@ -1,0 +1,13 @@
+name = "my-typescript-worker"
+type = "javascript"
+zone_id = ""
+account_id = "73d117f7e718f18070daec8750aebcb4"
+route = ""
+workers_dev = true
+compatibility_date = "2022-04-03"
+
+[build]
+# 指定为production
+command = "NODE_ENV=production node esbuild.js"
+[build.upload]
+format = "service-worker"

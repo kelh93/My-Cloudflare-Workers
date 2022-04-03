@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/handler.ts", "../src/index.ts"],
+  "sourcesContent": ["export async function handleRequest(request: string): Promise<Response> {\n  return new Response(request, {\n    headers: {\n      'content-type': 'application/json;charset=UTF-8'\n    }\n  })\n}\n", "import { handleRequest } from './handler'\n\naddEventListener('fetch', (event) => {\n  const data = {\n    hello: new Date() + '\u5E78\u8FD0\u6570\u5B57\uD83E\uDDD0 => ' + Math.ceil(Math.random() * 100),\n  };\n  const json = JSON.stringify(data, null, 2);\n  return event.respondWith(handleRequest(json))\n})\n"],
+  "mappings": "AAAA,iBAAoC,EAAoC,CACtE,MAAO,IAAI,UAAS,EAAS,CAC3B,QAAS,CACP,eAAgB,gCAClB,CACF,CAAC,CACH,CCJA,iBAAiB,QAAS,AAAC,GAAU,CACnC,GAAM,GAAO,CACX,MAAO,GAAI,MAAS,wCAAe,KAAK,KAAK,KAAK,OAAO,EAAI,GAAG,CAClE,EACM,EAAO,KAAK,UAAU,EAAM,KAAM,CAAC,EACzC,MAAO,GAAM,YAAY,EAAc,CAAI,CAAC,CAC9C,CAAC",
+  "names": []
+}
